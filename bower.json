@@ -1,0 +1,14 @@
+{
+  "name": "chat",
+  "description": "",
+  "main": "",
+  "authors": [
+    "CCimenci <cagricimenci@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "chat",
+    "nodejs"
+  ],
+  "homepage": "https://github.com/CCimenci/Chat"
+}
