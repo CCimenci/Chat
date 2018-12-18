@@ -10,5 +10,8 @@
     "chat",
     "nodejs"
   ],
-  "homepage": "https://github.com/CCimenci/Chat"
+  "homepage": "https://github.com/CCimenci/Chat",
+  "dependencies": {
+    "angular": "^1.7.5"
+  }
 }
