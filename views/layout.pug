@@ -2,17 +2,21 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
 
-    div(ng-app="chat",ng-cloak)
-      block content
-    
+    block stylesheets
+      link(rel='stylesheet', href='/stylesheets/style.css')
 
 
-    block javascripts
-      script(src="/angular/angular.min.js")
-      script(src="/javascripts/main.js")
+
+body
+  div(ng-app="chat",ng-cloak)
+    block content
+
+
+block javascripts
+  script(src="/angular/angular.min.js")
+  script(src="/javascripts/main.js")
+
 
 
 
