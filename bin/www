@@ -41,14 +41,7 @@ server.on('listening', onListening);
 
 const socketApi = require('../src/socketApi');
 const io = socketApi.io;
-
 io.attach(server);
-
-
-
-
-
-
 
 
 function normalizePort(val) {
