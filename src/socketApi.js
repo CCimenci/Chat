@@ -19,6 +19,8 @@ io.use(socketAuthorization);
 /**
  * Redis adapter
  */
+
+
 const redisAdapter = require('socket.io-redis');
 io.adapter(redisAdapter({
     host: process.env.REDIS_URI,
@@ -28,9 +30,21 @@ io.adapter(redisAdapter({
 
 
 io.on('connection', socket =>{
-    console.log('a user logged in with name ' + socket.request.user.name);
+    console.log('a user logged in with name ' + socket.request.user);
 
     Users.upsert(socket.id, socket.request.user);
+
+    Users.list(users =>{
+        io.emit('onlineList'.users);
+    });
+
+    socket.on('disconnect',() => {
+        Users.remove(socket.request.user.googleId);
+
+        Users.list(users =>{
+            io.emit('onlineList'.users);
+        });
+    });
 });
 
 
